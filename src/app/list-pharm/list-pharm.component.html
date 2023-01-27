@@ -1,0 +1,123 @@
+<div class="wrap">
+    <app-sidebar> </app-sidebar>
+    
+    <div class="w" style="width: 100%; background-color: white; border: 5px;border-color: black;">
+<h2 class="text-center">LISTE DES PHARMACIENS</h2>
+
+
+<!-- Button trigger modal --> 
+<button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #0FA958; color: white; margin-top: 60px;margin-left: 80%;">
+  Ajouter
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="text-align: center;">Ajouter pharmacien</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label" for="form3Example3" style="font-weight: bold;">NOM ET PRENOM</label>
+        <input type="name" id="form3Example3" class="form-control form-control-lg"
+          placeholder="Nom du pharmacien" />
+          <label class="form-label" for="form3Example3" style="font-weight: bold;">ADRESSE</label>
+          <input type="name" id="form3Example3" class="form-control form-control-lg"
+            placeholder="Adresse du pharmacien" />
+            <label class="form-label" for="form3Example3" style="font-weight: bold;">NUMERO</label>
+            <input type="tel" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Numero du pharmacien" />
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+
+
+<!-- Modal supp -->
+<div class="modal fade" id="staticBackdropv" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Voulez-vous vraiment supprimer?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NON</button>
+        <button type="button" class="btn btn-primary">OUI</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <button type="button" style="margin-left: 80%; width: 150px; height: 50px; background-color: #0FA958;color: white;" class="btn btn-sm" >Ajouter<div class="modal-dialog modal-sm"> -->
+ 
+<!-- Modal modifier -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">modifier</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row conte">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NOM</th>
+        <th scope="col">NUMERO</th>
+        <th scope="col">ADRESSE</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.TRAORE</td>
+        <td>89898989</td>
+        <td>Faladie</td>
+        <td><i class="bi bi-pencil-square" style="color: #0FA958;"></i><i class="bi bi-trash3" style="color: red; margin-left: 20px;"></i></td>
+      </tr>
+      <tr>
+        <!-- <th scope="row">2</th> -->
+        <td>Dr.TRAORE</td>
+        <td>89898989</td>
+        <td>Faladie</td>
+        <td><i data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="bi bi-pencil-square" style="color: #0FA958;"></i>
+           
+          <i data-bs-toggle="modal" data-bs-target="#staticBackdropv" class="bi bi-trash3" style="color: red; margin-left: 20px;"> </i>
+      
+      </td>
+      </tr>
+      <tr>
+        <td>Dr.TRAORE</td>
+        <td>89898989</td>
+        <td>Faladie</td>
+        <td><i class="bi bi-pencil-square" style="color: #0FA958;"></i><i class="bi bi-trash3" style="color: red;margin-left: 20px;"></i></td>
+      </tr>
+     
+    
+    </tbody>
+  </table>
+</div>
+<br>
+</div>
+</div>

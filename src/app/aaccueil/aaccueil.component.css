@@ -1,0 +1,26 @@
+.wrap{
+    display: flex;
+}
+.haut{
+    width: 300px;
+    height: 300px;
+    margin-left: 30%;
+    margin-top: 3%;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    font-size:50px ;
+}
+.container-fluid {
+
+    --offset-bottom: auto !important;
+    background: #F8F6FB;
+    --overflow: hidden;
+    overflow: auto;
+
+    /* &::-webkit-scrollbar {
+        display: none;
+    } */
+}
+

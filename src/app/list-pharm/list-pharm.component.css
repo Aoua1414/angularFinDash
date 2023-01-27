@@ -1,0 +1,21 @@
+.wrap{
+    display: flex;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+.conte{
+    padding: 30px;
+}
+.container-fluid {
+
+    --offset-bottom: auto !important;
+    background: #F8F6FB;
+    --overflow: hidden;
+    overflow: auto;
+
+    /* &::-webkit-scrollbar {
+        display: none;
+    } */
+}
