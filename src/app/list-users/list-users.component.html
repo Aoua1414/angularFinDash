@@ -7,7 +7,7 @@
 <!-- <button type="button" style="margin-left: 80%; width: 150px; height: 50px;" class="btn btn-primary btn-sm">Ajouter<div class="modal-dialog modal-sm"> -->
  
   <!-- </div></button> -->
-<div class="row conte" style="margin-top: 8%;">
+<div class="row conte" style="margin-top: 8%;"  >
 <table class="table">
     <thead>
       <tr>
@@ -17,15 +17,15 @@
         <!-- <th scope="col">ACTION</th> -->
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let tout of lesUsers">
       <tr>
-        <td>Aoua Traore</td>
-        <td>91505867</td>
-        <td>taoua14@gmail.com</td>
+        <td>{{tout.username}}</td>
+        <td>{{tout.numero}}</td>
+        <td>{{tout.email}}</td>
         <!-- <td>Action</td> -->
       </tr>
-      <tr>
-        <!-- <th scope="row">2</th> -->
+      <!-- <tr>
+        
         <td>Aoua Traore</td>
         <td>91505867</td>
         <td>taoua14@gmail.com</td>
@@ -44,7 +44,7 @@
         <td>Aoua Traore</td>
         <td>91505867</td>
         <td>taoua14@gmail.com</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>
