@@ -12,7 +12,7 @@ export class ListUsersComponent {
 
   constructor(private mesusers : ServUsersService){ }
   ngOnInit():void{
-this.mesusers.ListerUsers().subscribe(data=>{
+  this.mesusers.ListerUsers().subscribe(data=>{
   this.lesUsers=data;
   console.log("ttryt"+ this.lesUsers)
 })

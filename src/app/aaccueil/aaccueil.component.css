@@ -2,15 +2,19 @@
     display: flex;
 }
 .haut{
-    width: 300px;
-    height: 300px;
-    margin-left: 30%;
-    margin-top: 3%;
+    width: 40%;
+    /* height: 300px; */
+     margin-left: 30%; 
+     /* margin-bottom: 25%;  */
+    /* margin-top: 1%; */
 }
 h2{
     text-align: center;
     margin-top: 20px;
     font-size:50px ;
+    color: #149B54;
+    /* text-decoration: underline; */
+    border-color: #149B54;
 }
 .container-fluid {
 

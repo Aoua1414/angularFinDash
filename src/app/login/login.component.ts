@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnServiceService } from '../Services/conn-service.service';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -8,7 +8,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   
   form: any = {

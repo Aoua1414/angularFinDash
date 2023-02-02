@@ -2,59 +2,6 @@
 
     <div class="row">
 
-<div class="col-12 col-md-8">
-<img src="../../assets/tout.png" alt="">
-
-</div>
-
-<div class="col-12 col-md-4" style="margin-top: 100px;">
-    <img src="../../assets/l.png" alt="" class="logo" style="margin-left: 30px;">
-    </div>
-    
-    <div class="form-outline mb-4">
-
-        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-        <label class="form-label" for="form3Example3" style="font-weight: bold;">NOM ET PRENOM</label>
-        <input type="name" id="form3Example3" class="form-control form-control-lg"
-          placeholder="Votre nom et prenom" name="username"
-          [(ngModel)]="form.username" 
-          required
-          #username="ngModel" />
-          <div
-          class="alert alert-danger col-md-6"
-          role="alert"
-          *ngIf="username.errors && f.submitted"
-        >
-         Nom d'utilisateur est obligatoire !
-        </div>  
-      
-
-      <!-- Password input -->
-      <div class="form-outline mb-3">
-        <label class="form-label" for="form3Example4" style="font-weight: bold;">MOT DE PASSE</label>
-        <input type="password" id="form3Example4" class="form-control form-control-lg"
-          placeholder="votre password" name="password" [(ngModel)]="form.password" required minlength="6" 
-          #password="ngModel" />
-        
-          <div class="alert alert-danger  col-md-6"
-      role="alert"
-      *ngIf="password.errors" >
-      <div *ngIf="password.errors">Mot de passe est obligatoire !</div>
-      <div *ngIf="password.errors">
-       6 caractères au minimum
-      </div>
-
-      </div>  </div> 
-
-      <a href="#!" class="text-body" >Mot de passe oublié</a>
-      <br>
-    <div>
-      <button  type="submit" class="btn btnn" routerLink="/aacueil" >CONNEXION</button>
-    </div>
-
-
-    </form>
-
     </div>
 
 

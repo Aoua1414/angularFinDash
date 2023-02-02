@@ -2,15 +2,19 @@
     <app-sidebar> </app-sidebar>
     
     <div class="w" style="width: 100%; background-color: white; border: 5px;border-color: black;">
-<h2 class="text-center">LISTE DES PHARMACIENS</h2>
+<h1 class="text-center" style="font-size: 180%; font-weight: bold;">LISTE DES PHARMACIENS</h1>
 
-
+<div *ngIf="erreur" class="alert alert-success" role="alert">
+  <strong>{{erreur}}</strong>
+</div>
 <!-- Button trigger modal --> 
-<button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #0FA958; color: white; margin-top: 60px;margin-left: 80%;">
+<button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #0FA958; color: white; margin-left: 80%;">
   Ajouter
 </button>
 
 <!-- Modal -->
+
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -19,24 +23,43 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
         <label class="form-label" for="form3Example3" style="font-weight: bold;">NOM ET PRENOM</label>
         <input type="name" id="form3Example3" class="form-control form-control-lg"
-          placeholder="Nom du pharmacien" />
-          <label class="form-label" for="form3Example3" style="font-weight: bold;">ADRESSE</label>
-          <input type="name" id="form3Example3" class="form-control form-control-lg"
-            placeholder="Adresse du pharmacien" />
+          placeholder="Nom du pharmacien" name="nom_prenom" 
+          [(ngModel)]="form.nom_prenom"
+          required
+          #nom_prenom="ngModel"/>
+
+         
             <label class="form-label" for="form3Example3" style="font-weight: bold;">NUMERO</label>
             <input type="tel" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Numero du pharmacien" />
-      
+              placeholder="Numero du pharmacien" name="numero" 
+              [(ngModel)]="form.numero"
+              required
+              #numero="ngModel"/>
+
+              <label class="form-label" for="form3Example3" style="font-weight: bold;">ADRESSE</label>
+              <input type="name" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Adresse du pharmacien" name="adresse" 
+                [(ngModel)]="form.adresse"
+                required
+                #adresse="ngModel"/>
+               
+              
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Fermer</button>
+              <button type="submit" class="btn" (click)="onSubmit()">Enregistrer</button>
+                </div>
+              </form>
+          </div>
+        
+        </div>
+    
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-bs-dismiss="modal">Fermer</button>
-        <button type="button" class="btn">Enregistrer</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 <!-- Button trigger modal -->
 
 
@@ -60,6 +83,8 @@
 </div>
 <!-- <button type="button" style="margin-left: 80%; width: 150px; height: 50px; background-color: #0FA958;color: white;" class="btn btn-sm" >Ajouter<div class="modal-dialog modal-sm"> -->
  
+
+
 <!-- Modal modifier -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -79,9 +104,9 @@
   </div>
 </div>
 
-<div class="row conte">
+<div class="row conte" style="margin-top: -2%;">
 <table class="table">
-    <thead>
+    <thead style="color: #0FA958;">
       <tr>
         <th scope="col">NOM</th>
         <th scope="col">NUMERO</th>
@@ -90,28 +115,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Dr.TRAORE</td>
-        <td>89898989</td>
-        <td>Faladie</td>
+      <tr *ngFor="let pharm of lespharms" >
+        <td>{{pharm.nom_prenom}}</td>
+        <td>{{pharm.numero}}</td>
+        <td>{{pharm.adresse}}</td>
         <td><i class="bi bi-pencil-square" style="color: #0FA958;"></i><i class="bi bi-trash3" style="color: red; margin-left: 20px;"></i></td>
-      </tr>
-      <tr>
-        <!-- <th scope="row">2</th> -->
-        <td>Dr.TRAORE</td>
-        <td>89898989</td>
-        <td>Faladie</td>
-        <td><i data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="bi bi-pencil-square" style="color: #0FA958;"></i>
-           
-          <i data-bs-toggle="modal" data-bs-target="#staticBackdropv" class="bi bi-trash3" style="color: red; margin-left: 20px;"> </i>
-      
-      </td>
-      </tr>
-      <tr>
-        <td>Dr.TRAORE</td>
-        <td>89898989</td>
-        <td>Faladie</td>
-        <td><i class="bi bi-pencil-square" style="color: #0FA958;"></i><i class="bi bi-trash3" style="color: red;margin-left: 20px;"></i></td>
       </tr>
      
     

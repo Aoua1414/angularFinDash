@@ -1,14 +1,15 @@
 .wrap{
     display: flex;
     --offset-bottom: auto !important;
-    background: #F8F6FB;
+    background: white;
     --overflow: hidden;
     overflow: auto;
 
 }
-h2{
+h1{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5%;
+    color: #149B54;
 }
 .conte{
     padding: 30px;

@@ -1,9 +1,10 @@
 .wrap{
     display: flex;
 }
-h2{
+h1{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5%;
+    color: #149B54;
 }
 .conte{
     padding: 30px;
@@ -18,4 +19,7 @@ h2{
     /* &::-webkit-scrollbar {
         display: none;
     } */
+}
+.btn{
+    margin-top: 3%;
 }
