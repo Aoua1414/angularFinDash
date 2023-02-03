@@ -1,12 +1,90 @@
-<!-- <div class="container" style="margin-top: 20px;background-color: white;">  -->
 
-    <div class="row">
+ <section class="vh-100" style=" background-color: rgb(212, 232, 212);"> 
+    <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+      <h2 style="text-align: center; font-weight: bold;">Bienvenue cher administrateur, veuillez vous connecter!</h2>
+           <!-- class="img-fluid" alt="Sample image">  -->
+          <img src="../../assets/oh.png" alt="" style="width: 85%; margin-top: 12%; margin-left: 12%;">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate></form> 
+<!-- <img style="width: 50%; margin-left: 20%; " src="../../assets/l.png" alt=""> -->
 
+           <div style="border: #149B54; border-style:dotted; margin-bottom: 2%; padding: 12%; margin-top: 25%;">
+          <!-- nom input -->
+          
+          <div class="form-outline mb-4">
+             <label class="form-label" for="form3Example3">NOM ET PRENOM</label>
+            <input type="text" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Votre nom d'utilisateur" name="username" 
+              [(ngModel)]="form.username"
+              required
+              #username="ngModel"/>
+           
+          </div>
+          <!-- <div
+          class="alert alert-danger col-md-6"
+          role="alert"
+          *ngIf="username.errors && f.submitted"
+        >
+         Nom d'utilisateur est obligatoire !
+        </div>  -->
+       
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">MOT DE PASSE</label>
+            <input type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Votre mot de passe" name="password"
+              [(ngModel)]="form.password"
+              required
+              #password="ngModel" />
+            
+          </div>
+
+          <div class="alert alert-danger  col-md-6"
+          role="alert"
+          *ngIf="password.errors" >
+          <div *ngIf="password.errors">Mot de passe est obligatoire !</div>
+          <div *ngIf="password.errors">
+           6 caractères au minimum
+          </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Se souvenir de moi
+              </label>
+            </div>
+            <a href="#!" class="text-body">Mot de passe oublie?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="margin-bottom: 5%; background-color: #149B54; border-color: #149B54;" routerLink="/aaccueil">Connexion</button>  
+          </div>
+        </div>
+       
+      </div>
+      
     </div>
+  </div>
+  <!-- <div
+  class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5" style="background-color: #149B54;"> -->
+    <!-- Copyright -->
+    <!-- <div class="text-white mb-3 mb-md-0" style="margin-left: 35%;" > -->
+      <!-- Copyright ©vital.byAouaTraore.2023 -->
+    <!-- </div> -->
+    <!-- Copyright -->
 
-
-
-
-
-
-<!-- </div> -->
+    <!-- Right -->
+  
+      <!-- <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in" style="color: white;"></i>
+      </a>
+    </div> -->
+    <!-- Right -->
+  
+ </section>
