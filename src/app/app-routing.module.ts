@@ -7,6 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
+
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch:'full'
+  },
   {path: 'sidebar', component: SidebarComponent},
   {path: 'aaccueil', component:AaccueilComponent},
   {path: 'list-pharm', component:ListPharmComponent},
