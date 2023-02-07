@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
-  roles: string[] = [];
+  roles: string='';
 
   constructor(private connService: ConnServiceService, private tokenStorage: TokenStorageService, private route: Router ){}
 
@@ -32,11 +32,13 @@ export class LoginComponent implements OnInit {
       this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
+        
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
+        console.log(" Role :"+this.roles)
         // this.reloadPage();
-        if(this.isLoggedIn == true){
+        if(this.isLoggedIn == true && this.roles == "ROLE_ADMIN"){
           this.route.navigateByUrl("/aaccueil");
         }
       },
