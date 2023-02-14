@@ -23,13 +23,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <form *ngIf="!isLoggedIn" name="form"  #f="ngForm" novalidate>
         <label class="form-label" for="form3Example3" style="font-weight: bold;">NOM ET PRENOM</label>
         <input type="name" id="form3Example3" class="form-control form-control-lg"
           placeholder="Nom du pharmacien" name="nom_prenom" 
           [(ngModel)]="form.nom_prenom"
           required
-          #nom_prenom="ngModel"/>
+         />
 
          
             <label class="form-label" for="form3Example3" style="font-weight: bold;">NUMERO</label>
@@ -37,14 +37,14 @@
               placeholder="Numero du pharmacien" name="numero" 
               [(ngModel)]="form.numero"
               required
-              #numero="ngModel"/>
+             />
 
               <label class="form-label" for="form3Example3" style="font-weight: bold;">ADRESSE</label>
               <input type="name" id="form3Example3" class="form-control form-control-lg"
                 placeholder="Adresse du pharmacien" name="adresse" 
                 [(ngModel)]="form.adresse"
                 required
-                #adresse="ngModel"/>
+                />
                
               
           <div class="modal-footer">

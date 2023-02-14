@@ -10,16 +10,20 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class ListPharmComponent implements OnInit{
   success: any;
-  form:any={nom_prenom:'', adresse:'', numero:''};
+  form:any={nom_prenom:null, adresse:null, numero:null};
   erreur: any;
   isLoggedIn:any;
   id:any;
   lespharms:any;
+  nom_prenom:any;
+  adresse:any;
+  numero:any;
+  user: any;
 
   constructor(private pharm:PharmServiceService, private tokenStorage: TokenStorageService, private route: Router, private pharms: PharmServiceService){}
 
   ngOnInit(): void {
-    this.id = this.tokenStorage.getUser().id;
+    this.user = this.tokenStorage.getUser().id;
     console.log("ertyuio"+this.id);
 
     //affichage fonction
@@ -31,11 +35,18 @@ export class ListPharmComponent implements OnInit{
 
     })
   }
-  onSubmit():void{
-    const{nom_prenom, numero, adresse}=this.form;
-    this.pharm.ajout_pharm(nom_prenom, numero, adresse, this.id).subscribe(
+  onSubmit(){
+  //  const{nom_prenom, numero, adresse}=this.form;
+    this.pharm.ajout_pharm(this.form.nom_prenom, this.form.numero, this.form.adresse, this.user).subscribe(
       data=> {
-        this.success=data
+        this.success=data;
+
+        this.reloadPage();
+
+        console.log("nom"+this.success.nom_prenom);
+        console.log("numero"+this.numero)
+        console.log("adresseadre"+this.adresse)
+        console.log("id"+this.id)
         if(this.success.status == true){
           this.erreur = this.success.message
         }
@@ -46,5 +57,10 @@ export class ListPharmComponent implements OnInit{
     )
 
   }
+  // supp les champs apres ajout
+
+ reloadPage(): void {
+  window.location.reload();
+ }
 
 }
