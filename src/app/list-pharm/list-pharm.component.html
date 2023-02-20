@@ -115,7 +115,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pharm of lespharms" >
+      <tr *ngFor="let pharm of lespharms | paginate:{itemsPerPage:5,currentPage: p} ">
         <td>{{pharm.nom_prenom}}</td>
         <td>{{pharm.numero}}</td>
         <td>{{pharm.adresse}}</td>
@@ -126,6 +126,15 @@
     </tbody>
   </table>
 </div>
+<div class="pag">
+  <pagination-controls
+    (pageChange)="p = $event"
+    nextLabel="Suivant"
+    previousLabel="Précedent"
+    [responsive]="responsive"
+  ></pagination-controls>
+</div>
 <br>
 </div>
+
 </div>

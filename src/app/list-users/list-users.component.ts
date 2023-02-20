@@ -9,6 +9,8 @@ import { ServUsersService } from '../Services/serv-users.service';
 export class ListUsersComponent {
  
   lesUsers:any;
+  p:number=1;
+  responsive=true;
 
   constructor(private mesusers : ServUsersService){ }
   ngOnInit():void{

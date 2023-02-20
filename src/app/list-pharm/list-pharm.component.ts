@@ -20,6 +20,9 @@ export class ListPharmComponent implements OnInit{
   numero:any;
   user: any;
 
+  p:number=1;
+  responsive=true;
+
   constructor(private pharm:PharmServiceService, private tokenStorage: TokenStorageService, private route: Router, private pharms: PharmServiceService){}
 
   ngOnInit(): void {

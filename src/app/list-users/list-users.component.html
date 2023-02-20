@@ -17,7 +17,7 @@
         <!-- <th scope="col">ACTION</th> -->
       </tr>
     </thead>
-    <tbody *ngFor="let tout of lesUsers">
+    <tbody *ngFor="let tout of lesUsers | paginate : { itemsPerPage: 5, currentPage: p}">
       <tr>
         <td>{{tout.username}}</td>
         <td>{{tout.numero}}</td>
@@ -28,5 +28,13 @@
   </table>
 </div>
 <br>
+<div class="pag">
+  <pagination-controls
+    (pageChange)="p = $event"
+    nextLabel="Suivant"
+    previousLabel="Précedent"
+    [responsive]="responsive"
+  ></pagination-controls>
+</div>
 </div>
 </div>
